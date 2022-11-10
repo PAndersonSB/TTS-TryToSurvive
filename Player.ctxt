@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Player
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Player\ here.\r\n\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=moveDown\ moveUp\ moveLeft\ moveRight\ shootButton\ playerAppearance\ weapon
+comment2.target=Player(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ Weapon)
+comment3.params=
+comment3.target=void\ resetTime()
+comment4.params=
+comment4.target=int\ getHeart()
+comment5.params=
+comment5.target=int\ getPlayerAppearance()
+comment6.params=
+comment6.target=void\ createDependencies()
+comment7.params=
+comment7.target=void\ movePlayer()
+comment8.params=
+comment8.target=void\ shoot()
+comment9.params=
+comment9.target=void\ takeDamage()
+numComments=10

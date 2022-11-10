@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Weapon
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Weapon\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ createDependencies()
+comment3.params=
+comment3.target=void\ resetTime()
+comment4.params=
+comment4.target=int\ getPeso()
+comment5.params=x\ y\ direction
+comment5.target=void\ updateWeapon(int,\ int,\ java.lang.String)
+comment6.params=direction\ time
+comment6.target=void\ shoot(java.lang.String,\ int)
+numComments=7
