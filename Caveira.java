@@ -40,7 +40,23 @@ public class Caveira extends NonPlayerCharacter
             heart.updateStatusBar(getX()-9,getY()-30);
             hitByShot();
             setImage(image+frame+".png");
+            atack();
         }
+    }
+    
+    public void atack(){
+        World world = getWorld();
+        
+        if(timer%560 == 0){
+            if (frame == "3") {//npc/caveira3
+            world.addObject(new EnemyAtaque("npc/caveira3",getX(),getY(),10, 0), getX() + 25, getY() + 10);
+            } 
+                
+            if (direcao == "7") {//npc/caveira7
+                world.addObject(new EnemyAtaque("npc/caveira7",getX(),getY(),-10, 0), getX() - 25, getY() + 10);
+            }
+        }
+
     }
     
     public void move(){

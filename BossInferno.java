@@ -20,7 +20,7 @@ public class BossInferno extends NonPlayerCharacter
             novaCaveira("5");
         }
         else{
-            if (timer%9 == 0){ //parado
+            if (timer%4 == 0){ //parado
                 move();
                 timer +=1;
             }
@@ -31,6 +31,11 @@ public class BossInferno extends NonPlayerCharacter
             heart.updateStatusBar(getX()-9,getY()-30);
             hitByShot();
             setImage(image+direcao+frame+".png");
+            
+            if (timer%2000 == 0){
+                novaCaveira("1");
+                novaCaveira("5");
+            }
         }
     }
     
