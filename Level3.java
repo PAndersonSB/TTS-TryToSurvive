@@ -16,7 +16,7 @@ public class Level3 extends Levels
     public Level3(Player playerOne , Player playerTwo, Counter counter)
     {
         super(playerOne, playerTwo, counter);
-        setBackground("backgroundLevelThree.jpg");
+        setBackground("backgroundLevelThree3.jpg");
         backgroundMusic = new GreenfootSound("soundtrack/Kusari Yarou.wav");
         bossBackgroundMusic = new GreenfootSound("soundtrack/Try Your Luck.wav");
         condicionalSpawnedBoss = counter.getScore() + 15;
@@ -24,17 +24,29 @@ public class Level3 extends Levels
     
     public void nextLevel(){
         if(spawnedBoss && getObjects(NonPlayerCharacter.class).isEmpty()){
-            //Greenfoot.setWorld(new Level2(playerOne, playerTwo));
-            Greenfoot.stop();
+            backgroundMusic.stop();
+            bossBackgroundMusic.stop();
+            Greenfoot.setWorld(new WindowEndGame("WindowWin"));
         }
     }
     
     public void spawnEnemy(int x, int y){
-        addObject(new Zombie(), x, y);
+        int randomSpawn = Greenfoot.getRandomNumber(2);
+        switch (randomSpawn){
+            case 0:
+                addObject(new Anjo(), x, y);
+                break;
+            case 1:
+                addObject(new Ave("pombo"), x, y);
+                break;
+            case 2:
+                addObject(new Ave("corvo"), x, y);
+                break;
+        }
     }
     
     public void spawnBoss(int x, int y){
-        addObject(new Zombie(), x, y);
+        addObject(new Ave("corvo"), x, y);
         spawnedBoss = false;
     }
 }

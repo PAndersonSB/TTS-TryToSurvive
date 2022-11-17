@@ -37,8 +37,12 @@ public class Level1 extends Levels
     }
     
     public void spawnEnemy(int x, int y){
-        
-        addObject(new Zombie(), x, y);
+        int randomSpawn = Greenfoot.getRandomNumber(1);
+        switch (randomSpawn){
+            case 0:
+                addObject(new Zombie(), x, y);
+                break;
+        }
     }
     
     public void spawnBoss(int x, int y){

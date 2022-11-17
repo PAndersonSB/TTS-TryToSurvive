@@ -16,9 +16,17 @@ public abstract class NonPlayerCharacter extends Actor
     protected HeartBar heart;
     
     protected Player playerAlvo;
+    protected Player outroPlayer;
+    
     protected int speed;
     protected int timer;
-    protected String image;
+    
+    protected String image; //nome
+    protected String direcao; // direcao do movimento
+    protected String frame; // variacao de frames
+    
+    protected boolean ordemDeAnimacao = true;// se true crescente , se false decrescente
+    
         
     public void act() {
         if(timer == 0){
@@ -31,11 +39,12 @@ public abstract class NonPlayerCharacter extends Actor
             }
             else{ //se movendo
                 move();
-                heart.updateStatusBar(getX()-9,getY()-30);
-                hitByShot();
-                
                 timer +=1;
             }
+            animacao();
+            heart.updateStatusBar(getX()-9,getY()-30);
+            hitByShot();
+            setImage(image+direcao+frame+".png");
         }
     }
     
@@ -44,17 +53,14 @@ public abstract class NonPlayerCharacter extends Actor
         
         world.addObject(heart, getX() + 25, getY() + 10);
         
-        Player playerOne = world.getObjects(Player.class).get(0);
-        Player playerTwo = world.getObjects(Player.class).get(1);
-        
-        // pegar a posição e setar o mais proximos
         int numRandom = Greenfoot.getRandomNumber(2);
+        
         if(numRandom == 0){
-            this.playerAlvo= playerOne;
-            System.out.println(numRandom);
+            this.playerAlvo= world.getObjects(Player.class).get(0);
+            this.outroPlayer = world.getObjects(Player.class).get(1);
         }else{
-            this.playerAlvo= playerTwo;
-            System.out.println(numRandom);
+            this.playerAlvo= world.getObjects(Player.class).get(1);
+            this.outroPlayer = world.getObjects(Player.class).get(0);
         }
         
     }
@@ -68,10 +74,12 @@ public abstract class NonPlayerCharacter extends Actor
         int y; 
         
         if(getX() > playerAlvo.getX()){// realacao de x
-            x = getX() - speed ;
+            x = getX() - speed ; //esquerda
+            this.direcao = "L";
         }
         else{
-            x = getX() + speed ;
+            x = getX() + speed ; //direita
+            this.direcao = "R";
         }
         
         if(getY() > playerAlvo.getY()){// relacao de y 
@@ -84,8 +92,50 @@ public abstract class NonPlayerCharacter extends Actor
         setLocation(x,y);
     }
     
+    public boolean sendoObservado(){
+        boolean validacao = false;
+        //pega a posicao dele e compara com a do player //verifica com base nisso e na direcao se eles estão se olhando
+        if( (playerAlvo.getX() > getX() && playerAlvo.getDirection() == "left") || (playerAlvo.getX() < getX() && playerAlvo.getDirection() == "right") ){
+            validacao = true;
+        }
+        else if( (playerAlvo.getY() > getY() && playerAlvo.getDirection() == "up") || (playerAlvo.getY() < getY() && playerAlvo.getDirection() == "down") ){
+            validacao = true;
+        }
+        else if ( (outroPlayer.getX() > getX() && outroPlayer.getDirection() == "left") || (outroPlayer.getX() < getX() && outroPlayer.getDirection() == "right") ){
+            validacao = true;
+        }
+        else if( (playerAlvo.getY() > getY() && playerAlvo.getDirection() == "up") || (playerAlvo.getY() < getY() && playerAlvo.getDirection() == "down") ){
+            validacao = true;
+        }
+        return validacao;
+    }
+    
+    public void animacao(){
+        //ordemDeAnimacao;// se true crescente , se false decrescente
+        if (timer%10 == 0){
+            if(frame =="2"){
+                if(ordemDeAnimacao){
+                    frame = "3";
+                }
+                else{
+                    frame = "1";
+                }
+            }
+            else if(frame == "3"){
+                ordemDeAnimacao = false;
+                frame = "2";
+            }
+            else{
+                ordemDeAnimacao = true;
+                frame = "2";
+            }
+        }
+        
+        
+    }
+        
     public void hitByShot() {
-        if (isTouching(Attack.class)){
+        if (isTouching(RifleBullet.class) || isTouching(ShotgunBullet.class) ){
             Levels world = (Levels)getWorld();
             
             Attack attack = getIntersectingObjects(Attack.class).get(0);

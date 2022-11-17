@@ -55,6 +55,10 @@ public class Player extends Actor {
         weapon.resetTime();
     }
     
+    public String getDirection(){
+        return this.direction;
+    }
+    
     public int getHeart(){
         return heart.getQuantidadeAtual();
     }
@@ -104,6 +108,7 @@ public class Player extends Actor {
     }
     
     public void takeDamage() {
+        Levels world = (Levels)getWorld();
          
         if (isTouching(NonPlayerCharacter.class)){
             
@@ -111,7 +116,19 @@ public class Player extends Actor {
             heart.lose(enemy.getDamage());
             
             if(heart.getQuantidadeAtual()<=0){
-                Greenfoot.stop();
+                world.lose();
+            }
+        }
+        
+        if (isTouching(EnemyAtaque.class)){
+            
+            EnemyAtaque ataque = getIntersectingObjects(EnemyAtaque.class).get(0);
+            heart.lose(ataque.getDamage());
+            
+            world.removeObject(ataque);
+            
+            if(heart.getQuantidadeAtual()<=0){
+                world.lose();
             }
         }
         

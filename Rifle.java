@@ -35,6 +35,9 @@ public abstract class Rifle extends Weapon
             if (direction == "down") {
                 world.addObject(new RifleBullet(getX(),getY(),0, 10), getX() - 9, getY() + 20);
             }
+            GreenfootSound sound =  new GreenfootSound("rifle.wav");
+            sound.setVolume(55);
+            sound.play();
         }
     }
 }

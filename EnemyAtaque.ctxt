@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=EnemyAtaque
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ EnemyAtaque\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=nomeImage\ x\ y\ directionX\ directionY
+comment1.target=EnemyAtaque(java.lang.String,\ int,\ int,\ int,\ int)
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ EnemyAtaque\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=2

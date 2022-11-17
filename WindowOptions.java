@@ -6,6 +6,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+import java.lang.*;
+
 public class WindowOptions extends World
 {
 
@@ -43,7 +45,7 @@ public class WindowOptions extends World
         if (Greenfoot.mouseClicked(projeto)){
             setBackground("windows/WindowProject.png");
         }
-        if (Greenfoot.mouseClicked(sair)){
+        if (Greenfoot.mouseClicked(sair)){  
             Greenfoot.stop();
         }
     }

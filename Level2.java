@@ -19,7 +19,7 @@ public class Level2 extends Levels
         setBackground("backgroundLevelTwo.jpg");
         backgroundMusic = new GreenfootSound("soundtrack/Kusari Yarou.wav");
         bossBackgroundMusic = new GreenfootSound("soundtrack/Try Your Luck.wav");
-        condicionalSpawnedBoss = counter.getScore() + 15;
+        condicionalSpawnedBoss = counter.getScore() + 15;//15;
     }
     
     public void nextLevel(){
@@ -29,11 +29,22 @@ public class Level2 extends Levels
     }
     
     public void spawnEnemy(int x, int y){
-        addObject(new Zombie(), x, y);
+        int randomSpawn = Greenfoot.getRandomNumber(3);
+        switch (randomSpawn){
+            case 0:
+                addObject(new Fantasma(), x, y);
+                break;
+            case 1:
+                addObject(new Esqueleto(), x, y);
+                break;
+            case 2:
+                addObject(new Esqueleto(), x, y);
+                break;
+        }
     }
     
     public void spawnBoss(int x, int y){
-        addObject(new Zombie(), x, y);
+        addObject(new BossInferno(), x, y);
         spawnedBoss = false;
     }
 }

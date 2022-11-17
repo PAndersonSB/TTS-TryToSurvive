@@ -13,6 +13,7 @@ public abstract class Shotgun extends Weapon
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
+    
     public void shoot(String direction, int time){
         World world = getWorld();
         
@@ -48,6 +49,10 @@ public abstract class Shotgun extends Weapon
                 world.addObject(new ShotgunBullet(getX(),getY(), 2, 10) , getX() , getY() + 20);
                 world.addObject(new ShotgunBullet(getX(),getY(), 4,  8) , getX() , getY() + 20);
             }
+            
+            GreenfootSound sound =  new GreenfootSound("shotgun.wav");
+            sound.setVolume(70);
+            sound.play();
         }
     }
 }

@@ -12,12 +12,15 @@ public class Zombie extends NonPlayerCharacter
      * Act - do whatever the Enemy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     public Zombie() {
         speed = 1;
         heart = new HeartBar(20,"heart/"); // vida Zombie
         this.damage = 1;
-        this.image = "zumbi";
-        setImage("zumbi-idle_0.png");
+        this.image = "npc/zumbi";
+        this.direcao = "L";
+        this.frame = "1";
+        setImage(image + direcao + frame + ".png");
     }
     
 }

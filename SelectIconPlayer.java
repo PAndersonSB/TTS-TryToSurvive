@@ -39,12 +39,14 @@ public class SelectIconPlayer extends Actor
     }
     
     public SelectIconPlayer(int valor){
-        setImage( new GreenfootImage("P" + valor, 34, Color.ORANGE, new Color(0, 0, 0, 0)));
+        //setImage( new GreenfootImage("P" + valor, 34, Color.ORANGE, new Color(0, 0, 0, 0)));
         
         if(valor ==1){
+            setImage("botoes/P1.png");
             this.moveLeft = "a";
             this.moveRight = "d";
         }else{
+            setImage("botoes/P2.png");
             this.moveLeft = "left";
             this.moveRight = "right";
         }

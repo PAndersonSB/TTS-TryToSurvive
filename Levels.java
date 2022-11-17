@@ -152,4 +152,9 @@ public abstract class Levels extends World
         
     }
     
+    public void lose(){
+        backgroundMusic.stop();
+        bossBackgroundMusic.stop();
+        Greenfoot.setWorld(new WindowEndGame("WindowLose"));
+    }
 }
