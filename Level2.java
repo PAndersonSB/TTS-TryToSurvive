@@ -24,6 +24,7 @@ public class Level2 extends Levels
     
     public void nextLevel(){
         if(spawnedBoss && getObjects(NonPlayerCharacter.class).isEmpty()){
+            //Greenfoot.setWorld(new EntreLevels(2,playerOne,playerTwo,counter));
             Greenfoot.setWorld(new Level3(playerOne, playerTwo, counter));
         }
     }
@@ -38,7 +39,7 @@ public class Level2 extends Levels
                 addObject(new Esqueleto(), x, y);
                 break;
             case 2:
-                addObject(new Esqueleto(), x, y);
+                addObject(new Cachorro(30), x, y);
                 break;
         }
     }

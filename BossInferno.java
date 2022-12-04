@@ -41,7 +41,7 @@ public class BossInferno extends NonPlayerCharacter
     
     public BossInferno() {
         speed = 1;
-        heart = new HeartBar(1000,"heart/"); // vida Zombie
+        heart = new HeartBar(500,"heart/"); // vida Zombie
         this.damage = 1;
         this.image = "npc/bossInferno";
         this.direcao = "D";

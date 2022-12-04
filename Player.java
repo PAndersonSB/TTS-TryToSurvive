@@ -50,9 +50,21 @@ public class Player extends Actor {
         this.weapon = weapon;
     }
     
+    public String getShootButton(){
+        return shootButton;
+    }
+    
     public void resetTime(){
         time=0;
         weapon.resetTime();
+    }
+    
+    public Weapon getWeapon(){
+        return this.weapon;
+    }
+    
+    public void setWeapon(Weapon weapon){
+        this.weapon= weapon;
     }
     
     public String getDirection(){
@@ -65,6 +77,9 @@ public class Player extends Actor {
     
     public int getPlayerAppearance(){
         return playerAppearance;
+    }
+    public void setPlayerAppearance(int playerAppearance){
+        this.playerAppearance = playerAppearance;
     }
     
     public void createDependencies(){

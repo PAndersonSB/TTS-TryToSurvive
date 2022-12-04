@@ -14,8 +14,8 @@ public class WindowSelectActor extends World
      * 
      */
     
-    private Player playerOne = new Player("s", "w", "a", "d", "e", 1,new ShotgunOne());
-    private Player playerTwo = new Player("down", "up", "left", "right", "space", 2,new M4());
+    private Player playerOne ;
+    private Player playerTwo ;
     private GreenfootSound backgroundMusic;
     
     private Button button;
@@ -64,6 +64,9 @@ public class WindowSelectActor extends World
     public void act() {
         if (Greenfoot.mouseClicked(button)){
             backgroundMusic.stop();
+            
+            playerOne = new Player("s", "w", "a", "d", "e", p1.getIcone(),new ShotgunOne());
+            playerTwo = new Player("down", "up", "left", "right", "space", p2.getIcone(),new M4());
             Greenfoot.setWorld(new Level1(playerOne, playerTwo ,new Counter()));
         }
     }

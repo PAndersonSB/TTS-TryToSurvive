@@ -27,6 +27,7 @@ public class Level1 extends Levels
     public void nextLevel(){
         if(spawnedBoss && getObjects(NonPlayerCharacter.class).isEmpty() && volume == 0){
             bossBackgroundMusic.stop();
+            //Greenfoot.setWorld(new EntreLevels(1,playerOne,playerTwo,counter));
             Greenfoot.setWorld(new Level2(playerOne, playerTwo,counter));
         }
         else if(spawnedBoss && getObjects(NonPlayerCharacter.class).isEmpty() && volume > 0){
@@ -46,7 +47,7 @@ public class Level1 extends Levels
     }
     
     public void spawnBoss(int x, int y){
-        addObject(new Zombie(), getWidth() / 2, 0);
+        addObject(new Cachorro(1000), getWidth() / 2, 0);
         spawnedBoss = false;
     }
     

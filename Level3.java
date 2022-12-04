@@ -40,7 +40,7 @@ public class Level3 extends Levels
                 addObject(new Ave("pombo"), x, y);
                 break;
             case 2:
-                addObject(new Ave("corvo"), x, y);
+                addObject(new Ave("pombo"), x, y);
                 break;
         }
     }

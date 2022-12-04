@@ -19,7 +19,7 @@ public class RifleBullet extends Attack
     
         this.directionX= directionX;
         this.directionY= directionY;
-        this.damage = 10;
+        this.damage = 8;
         
         setImage("bala0.png");
     } 

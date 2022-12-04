@@ -1,28 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ave here.
+ * Write a description of class Cachorro here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Ave extends NonPlayerCharacter
+public class Cachorro extends NonPlayerCharacter
 {
     /**
-     * Act - do whatever the Ave wants to do. This method is called whenever
+     * Act - do whatever the Cachorro wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Ave(String nome) {
+    
+    public Cachorro(int vida) {
         speed = 1;
-        if (nome == "corvo"){
-            heart = new HeartBar(500,"heart/"); 
-        }
-        else{
-            heart = new HeartBar(30,"heart/"); 
-        }
-        
+        heart = new HeartBar(500,"heart/"); // vida Zombie
         this.damage = 1;
-        this.image = "npc/"+nome;
+        this.image = "npc/cachorro";
         this.direcao = "L";
         this.frame = "1";
         setImage(image + direcao + frame + ".png");

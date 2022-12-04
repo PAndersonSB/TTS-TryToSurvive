@@ -35,7 +35,7 @@ public abstract class Levels extends World
     protected boolean aumentandoVolume = true;
     
     //
-    protected int SpawnSpeed = 50; // Velocidade Spawn
+    protected int SpawnSpeed = 70; // Velocidade Spawn
     
     public Levels(Player playerOne , Player playerTwo, Counter counter )
     {    
