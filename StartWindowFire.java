@@ -1,21 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class startSelectionFire here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public class StartWindowFire extends Actor
 {
-    /**
-     * Act - do whatever the startSelectionFire wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private int indentificador = 1;
     private int timer = 0;
+    
     public void act()
     {
+        /**
+         *  atc - metodo de atuar do greenfoot.
+         */
         animate();
         timer++;
     }
@@ -24,6 +22,10 @@ public class StartWindowFire extends Actor
         setImage("/fire/fire"+ indentificador +".png");
     }
     public void animate(){
+        /**
+         * animate - metodo que usa o timer para mudar os frames e dar sensação de movimento ao objeto
+         * @return - void
+         */
         if (timer%5== 0){
             if (indentificador>10){
                 indentificador=1;

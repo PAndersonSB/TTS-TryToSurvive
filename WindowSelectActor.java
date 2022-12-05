@@ -1,10 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class selectActor here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public class WindowSelectActor extends World
 {
@@ -62,6 +60,10 @@ public class WindowSelectActor extends World
     }
     
     public void act() {
+        /**
+         * metodo atuar do greenfoot.
+         * @return void
+         */
         if (Greenfoot.mouseClicked(button)){
             backgroundMusic.stop();
             

@@ -1,18 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class RecoverLife here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public class RecoverLife extends NonPlayerCharacter
-{
-    /**
-     * Act - do whatever the RecoverLife wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
+{   
     public RecoverLife(){
         damage = -10; //damage negativo com o intuito de curar o jogador;
         setImage("bala0.png");
@@ -21,6 +14,9 @@ public class RecoverLife extends NonPlayerCharacter
     
     public void act()
     {
+         /**
+         *  atc - metodo de atuar do greenfoot.
+         */
         if(timer == 0){
             setPlayerAlvo();
         }
@@ -32,6 +28,10 @@ public class RecoverLife extends NonPlayerCharacter
     }
     
     public int getDamage(){
+        /**
+         * getDamage - retorna o dano deste objeto
+         * @return int damage
+         */
         World world = getWorld();
         world.removeObject(this);
         
@@ -39,6 +39,10 @@ public class RecoverLife extends NonPlayerCharacter
     }
     
     public void setPlayerAlvo(){
+        /**
+         * setPlayerAlvo - marca um jogador como alvo
+         * @return void
+         */
         World world = getWorld();
         Player playerOne = world.getObjects(Player.class).get(0);
         Player playerTwo = world.getObjects(Player.class).get(1);

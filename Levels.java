@@ -1,17 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Levels here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public abstract class Levels extends World
 {
 
     /**
      * Constructor for objects of class Levels.
-     * 
+     * @param Player playerOne - jogador numero 1
+     * @param Player playerTwo - jogador numero 2
+     * @param Counter counter - contador que conta a pontuação dos players
      */
     protected Player playerOne ;
     protected Player playerTwo ;
@@ -56,6 +56,10 @@ public abstract class Levels extends World
     }
     
     public void act(){
+        /**
+         * metodo de atuar do greenfoot.
+         * @return void
+         */
         nextLevel();
         spawn();
         transitionMusic();
@@ -63,10 +67,19 @@ public abstract class Levels extends World
     }
     
     public void incrementScore(int valor){
+        /**
+         * metodo que ira a aumentar o score dos jogadores.
+         * @param int valor - valor a ser incrementado
+         * @return void
+         */
         counter.incrementScore(valor);
     }
     
     public void spawn(){
+        /**
+         * metodo que ira sortear no mapa uma localização para fazer spawn de um inimigo
+         * @return void
+         */
         if (counter.getScore() >= condicionalSpawnedBoss){//condicional para momento do boss.
             if(!spawnedBoss){
                 spawnBoss(500,250);
@@ -109,13 +122,18 @@ public abstract class Levels extends World
     }
     
     public abstract void spawnEnemy(int x, int y);
-    public abstract void spawnBoss(int x, int y);
     
+    public abstract void spawnBoss(int x, int y);
+   
     public abstract void nextLevel();
     
     //music
     
     public void transitionMusic(){
+        /**
+         * metodo que faz a tranzição das musicas.
+         * @return void
+         */
         if(transitionMusic && time%10 == 0){ // se sim
             //abaixa o volume
             if(diminuindoVolume && volume > 0){
@@ -134,11 +152,19 @@ public abstract class Levels extends World
     }
     
     public void transitionVolumeMusic(int valor){
+        /**
+         * metodo que muda o valor do som da musica.
+         * @param int valor - valor a ser alterado no volume da musica
+         */
         volume-=valor;
         backgroundMusic.setVolume(volume);
     }
     
     public void setBackgroundMusic(){
+        /**
+         * metodo que muda a musica que esta sendo tocada no jogo.
+         * @return void
+         */
         if (spawnedBoss){
             bossBackgroundMusic.playLoop();
             bossBackgroundMusic.setVolume(volume);
@@ -153,6 +179,10 @@ public abstract class Levels extends World
     }
     
     public void lose(){
+        /**
+         * metodo que faz o fluxo de quando o jogador perde o jogo.
+         * @return void
+         */
         backgroundMusic.stop();
         bossBackgroundMusic.stop();
         Greenfoot.setWorld(new WindowEndGame("WindowLose"));

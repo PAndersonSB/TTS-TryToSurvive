@@ -1,17 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ShotgunTwo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public class ShotgunTwo extends Shotgun
 {
-    /**
-     * Act - do whatever the ShotgunTwo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public ShotgunTwo(){
         image = "3";
         fireRate = 80;

@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=RifleBullet
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ rifleBullet\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ @author\ Anderson\ Silva\ Brito\r\n\ @version\ 1\r\n
 comment1.params=x\ y\ directionX\ directionY
 comment1.target=RifleBullet(int,\ int,\ int,\ int)
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ rifleBullet\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\r\n\ RifleBullet\ -\ construtor\r\n\ int\ x\ -\ posi\u00E7\u00E3o\ inicial\ em\ X\r\n\ int\ y\ -\ posi\u00E7\u00E3o\ inicial\ em\ Y\r\n\ int\ directionX\ -\ valor\ X\ que\ o\ attack\ ira\ se\ mover\ na\ tela\r\n\ int\ directionY\ -\ valor\ Y\ que\ o\ attack\ ira\ se\ mover\ na\ tela\r\n
 numComments=2

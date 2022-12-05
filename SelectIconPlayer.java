@@ -1,18 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class SelectIconPlayer here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public class SelectIconPlayer extends Actor
 {
     /**
-     * Act - do whatever the SelectIconPlayer wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
+     * SelectIconPlayer - construtor
+     * @param int valor - valor do objeto , 1 para palayer 1 e 2 para player 2
+     */    
     private String moveLeft;
     private String moveRight;
     
@@ -23,6 +20,9 @@ public class SelectIconPlayer extends Actor
     
     public void act()
     {
+        /**
+         *  atc - metodo de atuar do greenfoot.
+         */
         touching();
         
         if(wait){
@@ -53,10 +53,19 @@ public class SelectIconPlayer extends Actor
     }
     
     public int getIcone(){
+        /**
+         * getIcone - retorna o valor do icone
+         * @return int icone - retorna o icone do player
+         */
+        
         return icone;
     }
     
     public void move(){
+        /**
+         * move - metodo que verifica a tecla apertada pelos jogadores e move o objeto na tela
+         * @return void
+         */
         
         if (Greenfoot.isKeyDown(moveLeft)){
             
@@ -105,6 +114,9 @@ public class SelectIconPlayer extends Actor
     }
     
     public void touching(){
+        /**
+         * touching - verifica se esta em contato com IconPlayer.class e muda o valor do icone deste objeto
+         */
         if (isTouching(IconPlayer.class)){
             IconPlayer iconePlayer = getIntersectingObjects(IconPlayer.class).get(0);
             

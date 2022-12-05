@@ -1,10 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class WindowOptions here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 import java.lang.*;
 
@@ -13,7 +11,7 @@ public class WindowOptions extends World
 
     /**
      * Constructor for objects of class WindowOptions.
-     * 
+     * @param GreenfootSound backgroundMusic
      */
     private GreenfootSound backgroundMusic;
     
@@ -36,6 +34,10 @@ public class WindowOptions extends World
         
     }
     public void act() {
+        /**
+         * metodo atuar do greenfoot.
+         * @return void
+         */
         if (Greenfoot.mouseClicked(jogar)){
            Greenfoot.setWorld(new WindowSelectActor(backgroundMusic) );
         }

@@ -8,10 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class NonPlayerCharacter extends Actor
 {
-    /**
-     * Act - do whatever the NonPlayerCharacter wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     protected int damage;
     protected HeartBar heart;
     
@@ -29,6 +25,9 @@ public abstract class NonPlayerCharacter extends Actor
     
         
     public void act() {
+        /**
+         *  atc - metodo de atuar do greenfoot.
+         */
         if(timer == 0){
             setPlayerAlvo();
             timer +=1;
@@ -49,6 +48,10 @@ public abstract class NonPlayerCharacter extends Actor
     }
     
     public void setPlayerAlvo(){
+        /**
+         * setPlayerAlvo - marca um jogador como inimigo
+         * @return void
+         */
         World world = getWorld();
         
         world.addObject(heart, getX() + 25, getY() + 10);
@@ -66,10 +69,18 @@ public abstract class NonPlayerCharacter extends Actor
     }
     
     public int getDamage(){
+        /**
+         * getDamage - retorna o dano deste inimigo
+         * @return int damage
+         */
         return damage;
     }
     
     public void move(){
+        /**
+         * move - move este objeto em direção ao seu alvo e muda a direção deste objeto
+         * @return void
+         */
         int x;
         int y; 
         
@@ -93,6 +104,10 @@ public abstract class NonPlayerCharacter extends Actor
     }
     
     public boolean sendoObservado(){
+        /**
+         * sendoObservado - verifica se um player esta direcionado a este objeto e se este objeto esta direcionado ao jogador
+         * @return boolean
+         */
         boolean validacao = false;
         //pega a posicao dele e compara com a do player //verifica com base nisso e na direcao se eles estão se olhando
         if( (playerAlvo.getX() > getX() && playerAlvo.getDirection() == "left") || (playerAlvo.getX() < getX() && playerAlvo.getDirection() == "right") ){
@@ -111,6 +126,10 @@ public abstract class NonPlayerCharacter extends Actor
     }
     
     public void animacao(){
+        /**
+         * animacao - muda os frames deste objeto a cada N segundos
+         * @return void
+         */
         //ordemDeAnimacao;// se true crescente , se false decrescente
         if (timer%10 == 0){
             if(frame =="2"){
@@ -135,6 +154,13 @@ public abstract class NonPlayerCharacter extends Actor
     }
         
     public void hitByShot() {
+        /**
+         * hitByShot - verifica se este objeto esta em contato com  RifleBullet.class ou ShotgunBullet.class
+         * se sim diminui a vida deste objeto e remove esse Attack do mundo
+         * se a vida chegar a zero este objeto morre
+         * 
+         * @return void
+         */
         if (isTouching(RifleBullet.class) || isTouching(ShotgunBullet.class) ){
             Levels world = (Levels)getWorld();
             

@@ -1,16 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class RechargeBar here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public class RechargeBar extends StatusBar
 {
     /**
-     * Act - do whatever the RechargeBar wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * RechargeBar - construtor 
+     * @param int quantidadeAtual - quantidade atual do objeto
+     * @param String diretorio - diretorio da imagem que sera usada
      */
     private int rechargeTime;
     private boolean recharge;
@@ -42,10 +41,20 @@ public class RechargeBar extends StatusBar
     }
     
     public boolean getRecharge(){
+        /**
+         * getRecharge - retorna se o objeto esta em modo de recarga
+         * @return boolean recharge
+         */
         return recharge;
     }
     
     public void updateStatusBar(int x,int y){ //mantem a imagem
+        /**
+         * updateStatusBar - atualiza a posição e muda a imagem do objeto
+         * @param int x - posição em X no jogo
+         * @param int y - posição em Y no jogo
+         * @return void
+         */
         //setImage(image);
         if(recharge){
             setImage(diretorio + "recarregando.png");   
@@ -57,7 +66,12 @@ public class RechargeBar extends StatusBar
                 
     }
     
-    public void updateImage(){ //muda a imagem
+    public void updateImage(){ 
+         /**
+         * updateImage - muda a imagem do objeto
+         * @return void
+         */
+        //muda a imagem
         //imageTemporaria= new GreenfootImage("vida: " + quantidadeAtual, 40, Color.BLACK, new Color(0, 0, 0, 0));
         setImage(diretorio + "fire" + animate + ".png");
         

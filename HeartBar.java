@@ -1,19 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class HeartBar here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public class HeartBar extends StatusBar
 {
     /**
-     * Act - do whatever the HeartBar wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * HeartBar - construtor
+     * @param int quantidadeAtual - valor atual do objeto
+     * @param String diretorio - diretorio da imagem a ser usada
      */
     public void act()
     {
+        /**
+         *  atc - metodo de atuar do greenfoot.
+         */
         if(quantidadeAtual<=0){
             World world = getWorld();
             world.removeObject(this);
@@ -26,6 +28,10 @@ public class HeartBar extends StatusBar
     }
     
     public void updateImage(){
+        /**
+         * updateImage - muda a imagem do objeto
+         * @return void
+         */
         //imageTemporaria= new GreenfootImage("vida: " + quantidadeAtual, 40, Color.BLACK, new Color(0, 0, 0, 0));
         float condicional = quantidadeAtual * 100  / quantidadeInicial;
         if(condicional > 66){

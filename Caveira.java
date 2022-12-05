@@ -1,20 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Cranio here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public class Caveira extends NonPlayerCharacter
 {
-    /**
-     * Act - do whatever the Cranio wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private NonPlayerCharacter boss;
     
     public Caveira(NonPlayerCharacter boss,String frame) {
+        /**
+         * Caveira - construtor
+         * @param NonPlayerCharacter - boss esqueleto
+         * @param String - frame
+         *
+         */
         speed = 1;
         heart = new HeartBar(50,"heart/"); // vida Zombie
         this.damage = 1;
@@ -25,6 +25,9 @@ public class Caveira extends NonPlayerCharacter
     }
     
     public void act() {
+        /**
+         *  atc - metodo de atuar do greenfoot.
+         */
         if(timer == 0){
             setPlayerAlvo();
             timer +=1;
@@ -45,6 +48,10 @@ public class Caveira extends NonPlayerCharacter
     }
     
     public void atack(){
+        /**
+         * atack - efetua um ataque a cada um periodo de tempo
+         * @param void
+         */
         World world = getWorld();
         
         if(timer%560 == 0){
@@ -60,6 +67,10 @@ public class Caveira extends NonPlayerCharacter
     }
     
     public void move(){
+        /**
+         * move - move este objeto a e muda sua imagem para dar um efeito de movimento
+         * @return void
+         */
         // se move em volta do boss.
         // localização varia conforme o frame
         // lembrar de mudar o frame frame

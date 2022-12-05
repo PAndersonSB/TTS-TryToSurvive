@@ -1,20 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Shotgun here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public abstract class Shotgun extends Weapon
 {
-    /**
-     * Act - do whatever the Shotgun wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
+
     
     public void shoot(String direction, int time){
+        /**
+         * shoot - verifica o tempo do ultimo tiro e se a arma esta em recarga e efetua 4 disparos
+         * @param String direction - direção da arma
+         * @param int time - tempo contador etc
+         * @return void
+         */
         World world = getWorld();
         
         if(registroShoot + fireRate <= time && !rechargeBar.getRecharge() ){

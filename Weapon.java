@@ -1,17 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Weapon here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public abstract class Weapon extends Actor
 {
-    /**
-     * Act - do whatever the Weapon wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     //protected Attack attack;
     protected String image;
     protected int peso;
@@ -27,6 +21,9 @@ public abstract class Weapon extends Actor
     
     public void act()
     {
+         /**
+         *  atc - metodo de atuar do greenfoot.
+         */
         if (timer == 0){
             createDependencies();
         }
@@ -34,20 +31,39 @@ public abstract class Weapon extends Actor
     }
     
     public void createDependencies(){
+        /**
+         * createDependencies - cria as dependencias no jogo
+         * @return void
+         */
         World world = getWorld();
         world.addObject(rechargeBar, getX(), getY());
     }
     
     public void resetTime(){
+        /**
+         * resetTime - reinicia o timer deste objeto
+         * @return void
+         */
         registroShoot = 0;
         timer=0;
     }
     
     public int getPeso(){
+        /**
+         * getPeso - retorna o peso da arma
+         * @return int peso
+         */
         return this.peso;
     }
     
     public void updateWeapon(int x,int y,String direction){
+        /**
+         * updateWeapon - atualiza a posição deste objeto
+         * @param int x - posição em X no jogo 
+         * @param int y - posição em Y no jogo
+         * @param String direction - direção em que o esta o player
+         * @return void
+         */
         rechargeBar.updateStatusBar(x, y);
         
         if (direction == "left"){   

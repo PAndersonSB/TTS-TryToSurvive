@@ -1,21 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class IconPlayer here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public class IconPlayer extends Actor
 {
     /**
-     * Act - do whatever the IconPlayer wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * IconPlayer -  construtor
+     * @param int icone - numeração do icone do player
      */
     private int icone;
     
     public void act()
     {
+        /**
+         *  atc - metodo de atuar do greenfoot.
+         */
         touching();
     }
     
@@ -25,10 +26,17 @@ public class IconPlayer extends Actor
     }
     
     public int getIcone(){
+        /**
+         * getIcone - retorna o valor do icone deste objeto
+         * @return icone - icone deste objeto
+         */
         return icone;
     }
     
     public void touching(){
+        /**
+         * touching - verifica se esta em contato com SelectIconPlayer.class
+         */
         if (isTouching(SelectIconPlayer.class)){
             setImage("/actorArt/art0"+(icone+4)+".png");
         }

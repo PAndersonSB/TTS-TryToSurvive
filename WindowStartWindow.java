@@ -3,13 +3,14 @@ import java.lang.System.Logger.Level;
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
- * 
- * @author (your name)
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 
 public class WindowStartWindow extends World { 
+    /**
+     * Constructor for objects of class WindowStartWindow.
+     */
 
     private GreenfootSound backgroundMusic = new GreenfootSound("soundtrack/THE BADDEST.wav"); //"soundtrack/Bones.wav"
     private int c=1;
@@ -24,6 +25,10 @@ public class WindowStartWindow extends World {
     }
     
     public void act() {
+        /**
+         * metodo atuar do greenfoot.
+         * @return void
+         */
         c++;
         if (Greenfoot.isKeyDown("enter") || Greenfoot.mouseClicked(null)){
             //Greenfoot.setWorld(new WindowSelectActor(backgroundMusic) );
@@ -38,6 +43,10 @@ public class WindowStartWindow extends World {
     }
 
     public void backGround(){
+        /**
+         * metodo que muda o background da tela conforme o numero do contador.
+         * @return void
+         */
         if(c< 330){
             setBackground("windows/StartWindow.png");
         }

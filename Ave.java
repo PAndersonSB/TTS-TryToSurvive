@@ -1,16 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ave here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public class Ave extends NonPlayerCharacter
 {
     /**
-     * Act - do whatever the Ave wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Ave - construtor
+     * @param String nome - nome da imagem a ser usada
+     * 
      */
     public Ave(String nome) {
         speed = 1;
@@ -29,6 +28,10 @@ public class Ave extends NonPlayerCharacter
     }
     
     public void animacao(){
+        /**
+         * animacao - muda o frame do objeto para dar uma impressão de movimento a cada N segundos
+         * @return void
+         */
         //ordemDeAnimacao;// se true crescente , se false decrescente
         if (timer%15 == 0){
             if(frame =="2"){

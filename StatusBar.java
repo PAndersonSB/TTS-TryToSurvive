@@ -1,16 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class StatusBarr here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public abstract class StatusBar extends Actor
 {
     /**
-     * Act - do whatever the StatusBarr wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * StatusBar - constutor
+     * @param int quantidadeAtual - quantidade atual de algo
+     * @param int diretorio - diretorio no qual esta a imagem que sera usada
+     * 
      */    
     protected int quantidadeAtual;
     protected int quantidadeInicial;
@@ -27,6 +27,12 @@ public abstract class StatusBar extends Actor
     }
     
     public void updateStatusBar(int x,int y){
+        /**
+         * updateStatusBar - atualiza a posição deste objeto
+         * @param int x - posição em X no jogo
+         * @param int y - posição em Y no jogo
+         * @return void
+         */
         //setImage(imageTemporaria);
         setImage(image);
         setLocation(x,y);
@@ -34,6 +40,11 @@ public abstract class StatusBar extends Actor
     }
      
     public void lose(int valor){ 
+        /**
+         * lose - metodo que diminui a quantidade atual deste objeto
+         * @param int valor - valor a ser decrementado
+         * @return void
+         */
         if( (this.quantidadeAtual-valor) < this.quantidadeInicial){ 
             this.quantidadeAtual-=valor; 
         }
@@ -46,6 +57,10 @@ public abstract class StatusBar extends Actor
     public abstract void updateImage();
     
     public int getQuantidadeAtual(){
+        /**
+         * getQuantidadeAtual - retorna o valor atual 
+         * @return int quantidadeAtual
+         */
         return this.quantidadeAtual;
     }
 }

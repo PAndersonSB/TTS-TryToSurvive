@@ -1,17 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class WindowEndGame here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public class WindowEndGame extends World
 {
 
     /**
      * Constructor for objects of class WindowEndGame.
-     * 
+     * @param String image
      */
     private Button sair= new Button("sair.png");
     private Button reniciar= new Button("reniciar.png");
@@ -26,6 +24,10 @@ public class WindowEndGame extends World
     }
     
     public void act(){
+        /**
+         * metodo atuar do greenfoot.
+         * @return void
+         */
          if (Greenfoot.mouseClicked(sair)){
             Greenfoot.stop();
         }

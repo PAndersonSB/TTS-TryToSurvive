@@ -1,18 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BossInferno here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public class BossInferno extends NonPlayerCharacter
 {
-    /**
-     * Act - do whatever the BossInferno wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act() {
+        /**
+         *  atc - metodo de atuar do greenfoot.
+         */
         if(timer == 0){
             setPlayerAlvo();
             timer +=1;
@@ -50,11 +47,20 @@ public class BossInferno extends NonPlayerCharacter
     }
     
     public void novaCaveira(String frame){
+        /**
+         * novaCaveira - adiciona um nova caveira no jogo
+         * @param String frame - frame da caveira
+         * @return void
+         */
         World world = getWorld();
         world.addObject(new Caveira(this,frame), getX(), getY() );
     }
     
     public void atack(){
+        /**
+         * atack - efetua um ataque
+         * @return void
+         */
         World world = getWorld();
         
         if(timer%280 == 0){

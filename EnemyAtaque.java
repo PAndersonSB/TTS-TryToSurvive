@@ -1,16 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EnemyAtaque here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Anderson Silva Brito
+ * @version 1
  */
 public class EnemyAtaque extends Attack
 {
     /**
-     * Act - do whatever the EnemyAtaque wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * EnemyAtaque - construtor
+     * String nomeImage - nome da imagem do attack
+     * int x - posição inicial em X
+     * int y - posição inicial em Y
+     * int directionX - valor X que o attack ira se mover na tela
+     * int directionY - valor Y que o attack ira se mover na tela
      */
     
     public EnemyAtaque(String nomeImage,int x, int y,int directionX,int directionY ){
